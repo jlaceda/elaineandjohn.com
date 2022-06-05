@@ -1,26 +1,185 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Elaine and John's Baby Shower</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elaine and John's Baby Shower</title>
+<style type="text/css">
+/***
+    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/***
+  Start of custom styles.
+***/
+@font-face {
+  font-family: "Sutter Camp";
+  src: url("SutterCamp.otf") format("opentype");;
+}
+html {
+  min-width: 20rem;
+  overflow-y: scroll;
+  height: 100vh;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1.00rem;
+  background-color: #e1eac6;
+  color: #444;
+}
+@media all and (min-width: 25em){
+  html {
+    font-size:calc(0.8999rem + 0.4000vw);
+  }
+}
+@media all and (min-width: 50em){
+  html {
+    font-size:1.10rem;
+  }
+}
+body {
+  height: 100%;
+}
+.top-fold {
+  height: 100%;
+  min-height: 100%;
+}
+.nav-container {
+  background-color: aqua;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr;
+}
+.nav {
+  background-color: darkcyan;
+  grid-column: left-edge / right-edge;
+  text-align: center;
+  background: url('totoro_face.png');
+}
+.title-container {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-rows: 48px [bottom-of-spacer] 24px [bottom-of-join] 48px [bot-of-names] 94px;
+  grid-template-columns: 1fr [left-edge] 2fr [right-edge] 1fr;
+  grid-template-areas: 
+    ". spacer ."
+    ". join ."
+    ". names ."
+    ". baby-shower .";
+    text-align: center;
+}
+</style>
 </head>
-<body style="max-width: 800px; margin: 40px auto; line-height: 1.6; font-size: 18px; color: #444; padding: 0 10px; background-color: #EEE">
-<header><h1 style="line-height: 1.2;">Elaine and John's Baby Shower</h1></header>
-<main>
-	<p>this baby is going to CHANGE OUR WORLD FOREVER! come celebrate this upcoming LIFE CHANGING addition to our fledgling family with your family. you should have gotten an invite with a time and place for this gathering. if you have not, then yodel your information request from the highest hilltop of the land and we will respond to you via carrier pigeon. or <a href="mailto:john.laceda+baby@gmail.com,ealasagas+baby@gmail.com?subject=BABY SHOWER INQUIRY">email</a> us.</p>
-	<p>as for gifts, your presence is present enough for us :) but because of the social contract of a baby shower dictates you should probably bring something, here are options: 
-		<ul>
-			<li>if you have a lightly used baby/toddler toy/clothing that you can part with, please use that as your gift for us instead of buying something new. some of our close friends have already done this and we greatly appreciate them for it.</li>
-			<li>we have online registries of baby things on amazon and target
-				<ul>
-					<li><a href=https://www.amazon.com/baby-reg/elaine-alasagas-john-laceda-august-2022/BZ9LM2DDUKUJ target=_>Amazon</a></li>
-					<li><a href=https://www.target.com/gift-registry/gift/elaine-and-john-baby target=_>Target</a></li>
-				</ul>
-			</li>
-		</ul>
-	</p>
-</main>
-<footer style="text-align: end;">Thank you!<br>Elaine and John</footer>
+<body>
+  <div class="top-fold">
+    <div class="nav-container">
+      <div class="nav">ABOUT RSVP REGISTRY GUESTBOOK</div>
+    </div>
+    <div class="title-container">
+      <div style="grid-area: join;">join us in celebrating</div>
+      <div style="grid-area: names;">john and elaine's</div>
+      <div style="grid-area: baby-shower;">baby<br>shower</div>
+    </div>
+  </div>
+  <div class="totoro-container"><img src="totoro_face.png"></div>
+  <div class="content-container">
+    <div style="grid-area: title;">
+      <span style="font-size: 2em;">this baby is going to</span><br>
+      <span style="font-size: 4em;">CHANGE</span><br>
+      <span style="font-size: 4em;">OUR WORLD</span><br>
+      <span style="font-size: 8em;">FOREVER!</span>
+    </div>
+    <div style="grid-area: content;">
+      <p>Come celebrate this upcoming <span style="font-family: 'Sutter Camp';">LIFE CHANGING</span> addition to our fledgling family with your family. you should have gotten an invite with a time and place for this gathering. if you have not, then yodel your information request from the highest hilltop of the land and we will respond to you via carrier pigeon. or <a href="mailto:john.laceda+baby@gmail.com,ealasagas+baby@gmail.com?subject=BABY SHOWER INQUIRY" style="font-family: 'Sutter Camp';">email</a> us.</p>
+    </div>
+    <div style="grid-area: registry;">
+      <p>as for gifts, your presence is present enough for us :) but because of the social contract of a baby shower dictates you should probably bring something, here are options: 
+        <ul>
+          <li>if you have a lightly used baby/toddler toy/clothing that you can part with, please use that as your gift for us instead of buying something new. some of our close friends have already done this and we greatly appreciate them for it.</li>
+          <li>we have online registries of baby things on amazon and target
+            <ul>
+              <li><a href=//www.amazon.com/baby-reg/elaine-alasagas-john-laceda-august-2022/BZ9LM2DDUKUJ target=_>Amazon</a></li>
+              <li><a href=//www.target.com/gift-registry/gift/elaine-and-john-baby target=_>Target</a></li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div style="grid-area: thank-you;"></div>
+  </div>
 </body>
 </html>
