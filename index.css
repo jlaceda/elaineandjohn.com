@@ -1,0 +1,211 @@
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/***
+  Start of custom styles.
+***/
+@font-face {
+  font-family: "Sutter Camp";
+  src: url("SutterCamp.otf") format("opentype");;
+}
+html {
+  min-width: 20rem;
+  overflow-y: scroll;
+  height: 100vh;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1.00rem;
+  background-color: #e1eac6;
+  color: #444;
+}
+@media all and (min-width: 25em){
+  html {
+    font-size:calc(0.8999rem + 0.4000vw);
+  }
+}
+@media all and (min-width: 50em){
+  html {
+    font-size:1.10rem;
+  }
+}
+body {
+  height: 100%;
+}
+.top-fold {
+  height: 100%;
+  min-height: 100%;
+}
+.nav-container {
+  background-color: aqua;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr;
+}
+.nav {
+  background-color: darkcyan;
+  grid-column: left-edge / right-edge;
+  text-align: center;
+  background: url('totoro_face.png');
+}
+.title-container {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-rows: 48px [bottom-of-spacer] 24px [bottom-of-join] 48px [bot-of-names] 94px;
+  grid-template-columns: 1fr [left-edge] 2fr [right-edge] 1fr;
+  grid-template-areas: 
+    ". spacer ."
+    ". join ."
+    ". names ."
+    ". baby-shower .";
+    text-align: center;
+}
+
+/********** ELAINE CSS **************/
+
+/******** HOME PAGE MAIN ************/
+.home {
+    text-align: center;
+}
+
+.home-join {
+    font-family: 'Sutter Camp';
+    font-size: 8vw;
+}
+
+.home-johnelaine {
+    left: 20vw;
+    font-family: 'Sutter Camp';
+    font-size: 10vw;
+    position: absolute;
+    margin: -6vh 0vh 0vw 0vh;
+}
+
+.home-and {
+    font-size:8vw;
+    margin: 0px -3vw 0px -3vw;
+}
+
+
+.home-babyshower {
+    margin: -4vh 0vh 0vw 0vh;
+}
+
+
+.home-baby {
+    width: 30%;
+}
+
+.home-shower {
+    width: 45%;
+}
+
+.home-invite-img {
+    width: 40%;
+}
+
+.leaf1 {
+    z-index: 1;
+    width: 20%;
+    position: absolute;
+    transform: rotate(90deg);
+    margin: -40vw 0px 0px 0px;
+}
+
+.leaf2 {
+    z-index: 1;
+    width: 20%;
+    position: absolute;
+    transform: rotate(270deg);
+    margin: -70vw 0px 0px 0px;
+    right: 0px;
+}
+
+.small-leaf {
+    z-index: 1;
+    width: 8%;
+    position: absolute;
+    transform: rotate(90deg);
+    margin: -70vw 0px 0px 0px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .home-join {
+        font-size: 5vw;
+    }
+    .home-johnelaine {
+        left: 30vw;
+        font-size: 7vw;
+        margin: -11vh 0vh 0vw 0vh;
+
+    }
+    .home-and {
+        font-size: 5vw;
+    }
+  }
