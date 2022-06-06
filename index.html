@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elaine and John's Baby Shower</title>
-<style type="text/css">
+<!-- <style type="text/css">
 /***
     The new CSS reset - version 1.6.0 (last updated 29.4.2022)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -14,172 +14,185 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
-}
+</style> -->
+<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&family=Concert+One&display=swap" rel="stylesheet">
 
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-    cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-    list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-    max-width: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-    border-collapse: collapse;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-    white-space: revert;
-}
-
-/* minimum style to allow to style meter element */
-meter {
-    -webkit-appearance: revert;
-    appearance: revert;
-}
-
-/* reset default text opacity of input placeholder */
-::placeholder {
-    color: unset;
-}
-
-/* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
-:where([hidden]) {
-    display: none;
-}
-
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly. */
-:where([contenteditable]) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    line-break: after-white-space;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-    -webkit-user-drag: element;
-}
-
-/***
-  Start of custom styles.
-***/
-@font-face {
-  font-family: "Sutter Camp";
-  src: url("SutterCamp.otf") format("opentype");;
-}
-html {
-  min-width: 20rem;
-  overflow-y: scroll;
-  height: 100vh;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  font-size: 1.00rem;
-  background-color: #e1eac6;
-  color: #444;
-}
-@media all and (min-width: 25em){
-  html {
-    font-size:calc(0.8999rem + 0.4000vw);
-  }
-}
-@media all and (min-width: 50em){
-  html {
-    font-size:1.10rem;
-  }
-}
-body {
-  height: 100%;
-}
-.top-fold {
-  height: 100%;
-  min-height: 100%;
-}
-.nav-container {
-  background-color: aqua;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr;
-}
-.nav {
-  background-color: darkcyan;
-  grid-column: left-edge / right-edge;
-  text-align: center;
-  background: url('totoro_face.png');
-}
-.title-container {
-  background-color: blueviolet;
-  display: grid;
-  grid-template-rows: 48px [bottom-of-spacer] 24px [bottom-of-join] 48px [bot-of-names] 94px;
-  grid-template-columns: 1fr [left-edge] 2fr [right-edge] 1fr;
-  grid-template-areas: 
-    ". spacer ."
-    ". join ."
-    ". names ."
-    ". baby-shower .";
-    text-align: center;
-}
-</style>
 </head>
 <body>
   <div class="top-fold">
-    <div class="nav-container">
-      <div class="nav">ABOUT RSVP REGISTRY GUESTBOOK</div>
+
+    <div class="menu-grid-container">
+        <div class="menu-grid-item">
+          <a class="menu-grid-item-text" href="#about">
+            <span style="color: #c5787f">A</span><span style="color: #c0872c">B</span><span style="color: #6aa482">O</span><span style="color: #97b706">U</span><span style="color: #b04420">T</span>
+          </a>
+        </div>
+        <div class="menu-grid-item">
+          <a class="menu-grid-item-text" href="#registry"><span style="color: #5b8483">R</span><span style="color: #c0a361">E</span><span style="color: #c5787f">G</span><span style="color: #c0a361">I</span><span style="color: #6aa482">S</span><span style="color: #455346">T</span><span style="color: #455346">R</span><span style="color: #c5787f">Y</span></a>
+        </div>
+        <div class="menu-grid-item">
+          <a class="menu-grid-item-text" href="#rsvp"><span style="color: #c0872c">R</span><span style="color: #6aa482">S</span><span style="color: #97b706">V</span><span style="color: #b04420">P</span></a>
+        </div>  
     </div>
-    <div class="title-container">
-      <div style="grid-area: join;">join us in celebrating</div>
+
+    <!-- <div class="nav-container">
+      <div class="nav">
+        <a href="#about">ABOUT</a>
+        <a href="#registry">REGISTRY</a>
+        <a href="#rsvp">RSVP</a>
+      </div>
+    </div> -->
+    <!-- <div class="title-container home">
+      <div class="home-join" style="grid-area: join;">join us in celebrating</div>
       <div style="grid-area: names;">john and elaine's</div>
       <div style="grid-area: baby-shower;">baby<br>shower</div>
+    </div> -->
+
+    <div class="home">
+      <div class="home-join">join us in celebrating</div>
+      <div class="home-johnelaine">
+        <span style="color: #c5787f">j</span><span style="color: #c0872c">o</span><span style="color: #6aa482">h</span><span style="color: #97b706">n</span>
+        <span class="home-and">and</span>
+        <span style="color: #b04420">e</span><span style="color: #5b8483">l</span><span style="color: #c0a361">a</span><span style="color: #c5787f">i</span><span style="color: #c0a361">n</span><span style="color: #6aa482">e</span><span style="color: #455346">'</span><span style="color: #455346">s</span>
+    </div>
+      <img class="home-invite-img" src="./assets/totoro_img_invite_shadow.png" />
+      
+    <div class="home-babyshower">
+      <div><img class="home-baby" src="./assets/baby.png"/></div>
+      <img class="home-shower" src="./assets/shower.png"/>
     </div>
   </div>
+  
+<!-- LEAVES -->
+<!-- <img class="leaf1" src="./assets/leaf1.png" />
+<img class="leaf1-r1" src="./assets/leaf1.png" />
+<img class="leaf2" src="./assets/leaf2.png" />
+<img class="leaf3" src="./assets/leaf3.png" />
+<img class="leaf4" src="./assets/leaf4.png" />
+<img class="leaf5" src="./assets/leaf5.png" /> -->
+
+
   <div class="totoro-container"><img src="totoro_face.png"></div>
-  <div class="content-container">
-    <div style="grid-area: title;">
-      <span style="font-size: 2em;">this baby is going to</span><br>
-      <span style="font-size: 4em;">CHANGE</span><br>
-      <span style="font-size: 4em;">OUR WORLD</span><br>
-      <span style="font-size: 8em;">FOREVER!</span>
+    <div id="about" class="content-container">
+      <div class="content-container-babychange" style="grid-area: title;">
+        <span style="font-size: calc(12px + 5vw);">this baby is going to</span><br>
+        <span style="font-size: calc(14px + 8vw);">CHANGE</span><br>
+        <span style="font-size: calc(14px + 8vw);">OUR WORLD</span><br>
+        <span style="font-size: calc(17px + 12vw);">FOREVER!</span>
+      </div>
+      <div class="content-container-text" style="grid-area: content;">
+        <p>Come celebrate this upcoming <span style="font-family: 'Sutter Camp'; font-size: 1.3em; line-height: 0;">LIFE CHANGING</span> addition to our fledgling family with your family. you should have gotten an invite with a time and place for this gathering. if you have not, then yodel your information request from the highest hilltop of the land and we will respond to you via carrier pigeon. or <a href="mailto:john.laceda+baby@gmail.com,ealasagas+baby@gmail.com?subject=BABY SHOWER INQUIRY" style="font-family: 'Sutter Camp'; font-size: 2em; line-height: 0;">email</a> us.</p>
+      </div>
+      <div style="grid-area: thank-you;"></div>
+
+      
     </div>
-    <div style="grid-area: content;">
-      <p>Come celebrate this upcoming <span style="font-family: 'Sutter Camp';">LIFE CHANGING</span> addition to our fledgling family with your family. you should have gotten an invite with a time and place for this gathering. if you have not, then yodel your information request from the highest hilltop of the land and we will respond to you via carrier pigeon. or <a href="mailto:john.laceda+baby@gmail.com,ealasagas+baby@gmail.com?subject=BABY SHOWER INQUIRY" style="font-family: 'Sutter Camp';">email</a> us.</p>
+    <div id="registry" class="content-registry">
+      <div class="registry">
+  
+        <div class="content-container-registry-title">
+          <span style="color: #c5787f">R</span><span style="color: #c0872c">E</span><span style="color: #6aa482">G</span><span style="color: #97b706">I</span><span style="color: #c0a361">S</span><span style="color: #6aa482">T</span><span style="color: #455346">R</span><span style="color: #b04420">Y</span>
+          <!-- <img class="registry-img" src="./assets/gift.png"  width="15%"/> -->
+        </div>
+  
+        <br/>
+        <p>As for gifts, your presence is present enough for us :) 
+          but because of the social contract of a baby shower dictates 
+          you should probably bring something, here are options: </p>
+          <ul class="content-container-registry-lists">
+            <li>If you have a lightly used baby/toddler toy/clothing that you can part with, 
+              please use that as your gift for us instead of buying something new. some of our
+               close friends have already done this and we greatly appreciate them for it.</li>
+               <br/>
+            <li>We have online registries of baby things on amazon and target</li>
+          </ul>
+          <br/>
+          <div class="registry-grid-container">
+            <div class="registry-grid-item">
+              <a href=//www.amazon.com/baby-reg/elaine-alasagas-john-laceda-august-2022/BZ9LM2DDUKUJ target=_>
+                <img class="registry-icon-amazon" src="./assets/amazon.svg" />
+              </a>
+            </div>
+            <div class="registry-grid-item">
+              <a href=//www.target.com/gift-registry/gift/elaine-and-john-baby target=_>
+                <img class="registry-icons-target" src="./assets/target.svg" />
+              </a>
+            </div>
+          </div>
+       
+      </div>
     </div>
-    <div style="grid-area: registry;">
-      <p>as for gifts, your presence is present enough for us :) but because of the social contract of a baby shower dictates you should probably bring something, here are options: 
-        <ul>
-          <li>if you have a lightly used baby/toddler toy/clothing that you can part with, please use that as your gift for us instead of buying something new. some of our close friends have already done this and we greatly appreciate them for it.</li>
-          <li>we have online registries of baby things on amazon and target
-            <ul>
-              <li><a href=//www.amazon.com/baby-reg/elaine-alasagas-john-laceda-august-2022/BZ9LM2DDUKUJ target=_>Amazon</a></li>
-              <li><a href=//www.target.com/gift-registry/gift/elaine-and-john-baby target=_>Target</a></li>
-            </ul>
-          </li>
-        </ul>
-      </p>
+
+  <!-- <div class="panel5_wrapper">
+    <div class="panel5"></div>
+    <div class="panel5-overlap">
+
+      
     </div>
-    <div style="grid-area: thank-you;"></div>
+  </div> -->
+
+
+
+  <div class="panel6_wrapper">
+    <div class="panel6"></div>
+    <div class="panel6-overlap"></div>
   </div>
+
+  <div id="rsvp" class="rsvp-container">
+    <div class="rsvp-title">
+      <span style="color: #c5787f">R</span><span style="color: #c0872c">S</span><span style="color: #6aa482">V</span><span style="color: #97b706">P</span>
+    </div>
+
+    <div class="rsvp-form-container">
+        <form action="/action_page.php">
+        <div class="rsvp-row">
+          <div class="rsvp-col-25">
+            <label class="rsvp-label" for="fname">YOUR NAME</label>
+          </div>
+          <div class="rsvp-col-75">
+            <input class="rsvp-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+          </div>
+        </div>
+        <div class="rsvp-row">
+          <div class="rsvp-col-25">
+            <label class="rsvp-label" for="lname">EMAIL</label>
+          </div>
+          <div class="rsvp-col-75">
+            <input class="rsvp-input" type="text" id="lname" name="email" placeholder="Enter your email..">
+          </div>
+        </div>
+        <div class="rsvp-row">
+          <div class="rsvp-col-25">
+            <label class="rsvp-label" for="subject">MESSAGE</label>
+          </div>
+          <div class="rsvp-col-75">
+            <textarea class="rsvp-input" id="subject" name="subject" placeholder="Feel free to write a message.." style="height:200px"></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="rsvp-submit-container">
+          <div class="rsvp-row">
+            <input class="rsvp-submit" type="submit" value="Submit">
+          </div>
+        </div>
+        </form>
+        <img class="acorn-trail" src="./assets/acorn_trail.png"/>
+    </div>
+
+    <div class="rsvp-bottom">
+      <!-- <div className="footer">
+        <div className="footer-designed">
+            Developed with ♥ by <a href="https://teamlumpia.com/">TeamLumpia LLC</a>
+        </div>
+      </div> -->
+    </div>
+
+    
+  </div>
+
+
 </body>
 </html>
