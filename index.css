@@ -16,7 +16,7 @@ a, button {
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ol, menu {
     list-style: none;
 }
 
@@ -102,14 +102,38 @@ body {
   height: 100%;
   min-height: 100%;
 }
-.nav-container {
-  background-color: aqua;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr;
+
+.menu-grid-container {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* background-color: #2196F3; */
+    /* padding: 10px; */
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr; */
+    position: fixed;
+    top: 0;
+    padding: 0 20vw;
+    z-index: 10;
 }
+  
+.menu-grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    text-align: center;
+}
+
+.menu-grid-item-text {
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+}
+
+.menu-grid-item-text:hover {
+    color: white; 
+}
+
 .nav {
-  background-color: darkcyan;
   grid-column: left-edge / right-edge;
   text-align: center;
   background: url('totoro_face.png');
@@ -132,11 +156,13 @@ body {
 /******** HOME PAGE MAIN ************/
 .home {
     text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
 }
 
 .home-join {
     font-family: 'Sutter Camp';
-    font-size: 8vw;
+    font-size: 10vw;
 }
 
 .home-johnelaine {
@@ -154,48 +180,24 @@ body {
 
 
 .home-babyshower {
-    margin: -4vh 0vh 0vw 0vh;
+    margin: -1vh 0vh 0vw 0vh;
 }
 
 
 .home-baby {
-    width: 30%;
+    width: 65%;
 }
 
 .home-shower {
-    width: 45%;
+    width: 90%;
 }
 
 .home-invite-img {
     width: 40%;
 }
 
-.leaf1 {
-    z-index: 1;
-    width: 20%;
-    position: absolute;
-    transform: rotate(90deg);
-    margin: -40vw 0px 0px 0px;
-}
-
-.leaf2 {
-    z-index: 1;
-    width: 20%;
-    position: absolute;
-    transform: rotate(270deg);
-    margin: -70vw 0px 0px 0px;
-    right: 0px;
-}
-
-.small-leaf {
-    z-index: 1;
-    width: 8%;
-    position: absolute;
-    transform: rotate(90deg);
-    margin: -70vw 0px 0px 0px;
-}
-
-@media only screen and (min-width: 1000px) {
+/*** FOR DESKTOP VIEW ***/
+@media only screen and (min-width: 1500px) {
     .home-join {
         font-size: 5vw;
     }
@@ -208,4 +210,325 @@ body {
     .home-and {
         font-size: 5vw;
     }
+
+    .menu-grid-container {
+        padding: 0 35vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .home-johnelaine {
+        margin: -2vh 5vw 0 0;
+    }
+    .home-invite-img {
+        margin-top: 5vh;
+    }
+}
+  /* *** LEAVES ***
+  /* BIG LEAF VINE */
+  /* .leaf1 {
+    z-index: 1;
+    width: 20%;
+    position: absolute;
+    transform: rotate(90deg);
+    margin: -350px 0px 0px 0px;
+} */
+
+/* .leaf1-r1 {
+    z-index: 1;
+    width: 20%;
+    position: absolute;
+    transform: rotate(270deg);
+    margin: -500px 0px 0px 0px;
+    right: 0px;
+} */
+
+/* SMALL 2 LEAVES */
+/* .leaf2 {
+    z-index: 1;
+    width: 8%;
+    position: absolute;
+    transform: rotate(90deg);
+    margin: -350px 0px 0px 0px;
+} */
+
+/* LEAF VINE 3 LEAVES */
+/* .leaf3 {
+    z-index: 1;
+    width: 15%;
+    position: absolute;
+    transform: rotate(90deg);
+    margin: -500px 0px 0px 0px;
+} */
+/* LEAF VINE 4 LEAVES */
+/* .leaf4 {
+    z-index: 1;
+    width: 18%;
+    position: absolute;
+    transform: rotate(270deg);
+    margin: -300px 0px 0px 0px;
+    right: 0px;
+} */
+
+/* SMALL 3 LEAVES */
+/* .leaf5 {
+    z-index: 1;
+    width: 15%;
+    position: absolute;
+    transform: rotate(270deg);
+    margin: -300px -20px 0px 0px;
+    right: 0;
+}  */
+
+
+/***** TOTORO CONTAINER *******/
+.content-container {
+    background-color: #cfdd8e;
+    margin-top: -20px;
+    padding-bottom: 20vh;
+}
+
+.content-container-babychange {
+    /* color: white; */
+    font-family: "Sutter Camp";
+    line-height: 0.8;
+    text-align: center;
+}
+
+
+/***** REGISTRY-OVERLAP *****/
+.panel5_wrapper {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+}
+  
+.panel5 {
+    height: 20vh;      
+    background-color: #cfdd8e; 
+    background-size: cover;
+    position: relative;
+}
+
+.panel5-overlap {
+    position: absolute;
+	width: 100%;
+	height: 20vh;
+    top: 0;
+    left: 0;
+    /* USE MARIO BACKGROUND IMAGE INSTEAD */
+    background-color: #cfdd8e; 
+    background-size: cover;   
+    clip-path: polygon(0% 90%,100% 0%,100% 100%,0% 100%);
+}
+
+
+/***** REGISTRY-CONTENT *****/
+.content-registry {
+    background-color: #cfdd8e;
+    padding-bottom: 10vh;
+}
+
+.registry {
+    font-size: 22px;
+    margin: -22vh 10vw 0 10vw;
+    grid-area: registry;
+}
+
+.content-container-registry-title {
+    font-family: "Sutter Camp";
+    font-size: calc(25px + 10vw);
+    text-align: center;
+    margin: 2vh 0vw 0vh 0vw;
+}
+
+.registry-img {
+    position: absolute;
+    z-index: 1;
+    margin: 0vh -20vw 0vh 0vw;
+}
+
+.content-container-text {
+    /* color: white; */
+    font-size: 22px;
+    margin: 8vh 10vw 0 10vw;
+}
+
+.content-container-registry-lists {
+    margin: 2vh 0 0 5vw;
+}
+
+.registry-containers {
+    margin: 5vw;    
+}
+
+/* .reg-icon-containers {
+    background-color: white;
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    min-width: 200px;
+    min-height: 200px;
+    margin: 2vw;
+} */
+.registry-icon-amazon {
+    margin-top: 20%;
+}
+
+.registry-icons-target {
+    margin-top: 15%;
+}
+
+
+.registry-grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    display: flex;
   }
+  
+  .registry-grid-item {
+    background-color: white;
+
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    min-width: calc(100px + 10vw);
+    min-height: calc(100px + 10vw);
+    margin: 2vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /****** RSVP *******/
+.panel6_wrapper {
+    position: relative;
+    width: 100%;
+    height: 19vh;
+}
+  
+.panel6 {
+    height: 20vh;      
+    background-color: #cfdd8e; 
+    background-size: cover;
+    position: relative;
+}
+
+.panel6-overlap {
+    position: absolute;
+	width: 100%;
+	height: 20vh;
+    top: 0;
+    left: 0;
+    background-color: #e1eac6; 
+    background-size: cover;   
+    clip-path: polygon(0% 0%,100% 100%,100% 100%,0% 100%);
+}
+
+.rsvp-bottom {
+    height: 5vh;
+}
+
+.rsvp-title {
+    font-family: "Sutter Camp";
+    font-size: calc(30px + 10vw);
+    text-align: center;
+}
+
+.rsvp-form-container {
+    background-color: white;
+    margin: 5vh 10vw 10vh 10vw;
+    border-radius: 20px;
+    padding: 5vw;
+}
+
+/** RSVP FORM **/
+.rsvp-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    color: #6aa482;
+}
+  
+.rsvp-label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+.rsvp-submit {
+    background-color: #6aa482;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    /* float: right; */
+}
+
+.rsvp-submit-container {
+    text-align: center;
+}
+.rsvp-submit:hover {
+    background-color: #cfdd8e;
+}
+
+.rsvp-label {
+    padding: 0;
+    font-size: 30px;
+}
+
+.rsvp-col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    font-family: "Sutter Camp";
+}
+  
+.rsvp-col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+  
+  /* Clear floats after the columns */
+.rsvp-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .rsvp-col-25, .rsvp-col-75, .rsvp-submit {
+      width: 100%;
+      margin-top: 0;
+    }
+}
+
+.acorn-trail {
+    width: 60%;
+    /* float: right; */
+    z-index: 10;
+    margin-top: -3vh;
+    margin-left: 20vw;
+}
+
+.footer-designed {
+        font-size: 1.2vw;
+        color: black;
+        font-family: 'Quicksand', sans-serif;
+        text-transform: uppercase;
+        padding: 2vw;
+    }
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        right: 10%;
+        left: 10%;
+    }
+    .footer-designed {
+        font-size: 12px;
+    }
+}
