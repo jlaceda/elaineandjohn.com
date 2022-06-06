@@ -78,7 +78,8 @@ html {
   min-width: 20rem;
   overflow-y: scroll;
   height: 100vh;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  /* font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   margin: 0;
   font-size: 1.00rem;
@@ -119,18 +120,21 @@ body {
 }
   
 .menu-grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
     text-align: center;
 }
 
 .menu-grid-item-text {
+    border-radius: 15px;
+    padding: 4px 2vw;
+    background-color: rgba(255, 255, 255, 0.658);
     font-family: 'Concert One', cursive;
     font-size: 20px;
 }
 
 .menu-grid-item-text:hover {
-    color: white; 
+    background-color: rgba(151, 213, 255, 0.658);
 }
 
 .nav {
@@ -513,22 +517,4 @@ body {
     z-index: 10;
     margin-top: -3vh;
     margin-left: 20vw;
-}
-
-.footer-designed {
-        font-size: 1.2vw;
-        color: black;
-        font-family: 'Quicksand', sans-serif;
-        text-transform: uppercase;
-        padding: 2vw;
-    }
-
-@media only screen and (max-width: 768px) {
-    .footer {
-        right: 10%;
-        left: 10%;
-    }
-    .footer-designed {
-        font-size: 12px;
-    }
 }
