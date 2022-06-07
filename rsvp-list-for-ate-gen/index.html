@@ -20,10 +20,10 @@ document.onreadystatechange = async() => {
         
         const emailEveryoneAnchor = document.getElementById('email-everyone');
         const mailtoText = emailEveryoneAnchor.getAttribute('href');
-        emailEveryoneAnchor.setAttribute('href', `${mailtoText}${rsvp.email}`);
+        emailEveryoneAnchor.setAttribute('href', `${mailtoText}${rsvp.email}, `);
 
         const card = document.createElement('div');
-        card.innerHTML = `<h2>${rsvp.name}</h2><a href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p>`;
+        card.innerHTML = `<h3>${rsvp.name}</h3><a href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p><hr>`;
         return card;
       }));
   }
