@@ -5,28 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RSVP list for Ate Gen</title>
 <link rel="icon" href="favicon.png">
-</head>
-<body>
-    <div id="a" style="max-width:640px"></div>
-<script>
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    const a = document.getElementById('a');
-    fetch('https://api.elaineandjohn.com/rsvp-list')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        const b = document.createElement("div");
-        const c = data.map((rsvp) => {
-            const p = document.createElement("p");
-            p.innerHTML = `${rsvp.name}</br>${rsvp.email}</br>${rsvp.message}`;
-            return p;
-        });
-        b.append(...c);
-        a.appendChild(b);
-    });
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
   }
-}
+</style>
+</head>
+<body style="max-width:640px">
+  <h1>RVSP List for Ate Gen</h1>
+  <div id="container"></div>
+<script>
+document.onreadystatechange = async() => {
+  if (document.readyState === 'complete') {
+    document.getElementById("container")
+      .append(...(await (await fetch('https://api.elaineandjohn.com/rsvp-list')).json()).map((rsvp) => {
+        const d = document.createElement("div");
+        d.innerHTML = `<p><strong>${rsvp.name}</strong></br><small>${rsvp.email}</small></br>${rsvp.message}</p>`;
+        return d;
+      }));
+  }
+};
 </script>
 </body>
 </html>
