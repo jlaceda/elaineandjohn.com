@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>RSVP list for Ate Gen</title>
-<link rel="icon" href="favicon.png">
-<style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-  }
-</style>
+<link rel='icon' href='favicon.png'>
 </head>
-<body style="max-width:640px">
-  <h1>RVSP List for Ate Gen</h1>
-  <div id="container"></div>
+<body style='max-width:640px'>
+  <header>
+    <h1>RVSP List for Ate Gen</h1>
+    <aside><a id='email-everyone' href='mailto:john.laceda@gmail.com, ealasagas@gmail.com?bcc='>email everyone (bcc)</a></aside>
+  </header>
+  <div id='container'></div>
 <script>
 document.onreadystatechange = async() => {
   if (document.readyState === 'complete') {
-    document.getElementById("container")
-      .append(...(await (await fetch('https://api.elaineandjohn.com/rsvp-list')).json()).map((rsvp) => {
-        const d = document.createElement("div");
-        d.innerHTML = `<p><strong>${rsvp.name}</strong></br><small>${rsvp.email}</small></br>${rsvp.message}</p>`;
+    document.getElementById('container')
+      .append(...(await (await fetch('https://api.elaineandjohn.com/rsvp-list')).json()).map((rsvp, index) => {
+        
+        const emailEveryoneAnchor = document.getElementById('email-everyone');
+        const mailtoText = emailEveryoneAnchor.getAttribute('href');
+        emailEveryoneAnchor.setAttribute('href', `${mailtoText}${rsvp.email}`);
+
+        const card = document.createElement('div');
+        card.innerHTML = `<h2>${rsvp.name}</h2><a href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p>`;
         return d;
       }));
   }
