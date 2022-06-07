@@ -93,14 +93,6 @@
       </div>
     </div>
 
-  <!-- <div class="panel5_wrapper">
-    <div class="panel5"></div>
-    <div class="panel5-overlap">
-
-      
-    </div>
-  </div> -->
-
 
 
   <div class="panel6_wrapper">
@@ -115,6 +107,7 @@
 
     <div class="rsvp-form-container">
       <div class="rsvp-thank-you rsvp-label" style="display: none; font-family: 'Sutter Camp'; font-size: 30px;"><p>Thank you!</br>See you there!</p></div>
+      <div class="rsvp-enter-name rsvp-label" style="display: none; font-family: 'Sutter Camp'; font-size: 30px; color: #b04420;"><p>enter your name please</p></div>
         <form class="rsvp-form">
         <div class="rsvp-row">
           <div class="rsvp-col-25">
@@ -143,7 +136,6 @@
         <br>
         <div class="rsvp-submit-container">
           <div class="rsvp-row">
-            <!-- <input class="rsvp-submit" type="submit" value="Submit"> -->
             <button class="rsvp-submit">Send</button>
           </div>
         </div>
@@ -171,13 +163,11 @@ document.onreadystatechange = () => {
     const messageEl = document.querySelector("#message");
     const rsvpForm = document.querySelector(".rsvp-form");
     const thankYou = document.querySelector(".rsvp-thank-you");
+    const enterNameMessage = document.querySelector(".rsvp-enter-name");
 
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
 
-      rsvpForm.style.display = 'none';
-      thankYou.style.display = 'block';
-  
       const postData = {
         rsvp: {
           name: nameEl.value,
@@ -186,6 +176,14 @@ document.onreadystatechange = () => {
         }
       };
 
+      if (postData.rsvp.name === '') {
+        enterNameMessage.style.display = 'block';
+        return;
+      }
+
+      rsvpForm.style.display = 'none';
+      thankYou.style.display = 'block';
+  
       fetch('https://api.elaineandjohn.com/rsvp', {
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'POST',
