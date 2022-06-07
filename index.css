@@ -59,7 +59,8 @@ meter {
     -webkit-user-modify: read-write;
     overflow-wrap: break-word;
     -webkit-line-break: after-white-space;
-    line-break: after-white-space;
+    line-break: strict;
+
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
@@ -512,6 +513,7 @@ body {
 }
 
 .acorn-trail {
+    display: block;
     width: 60%;
     /* float: right; */
     z-index: 10;

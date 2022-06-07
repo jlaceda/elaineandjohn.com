@@ -21,9 +21,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Concert+One&family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top-fold">
 
-    <div class="menu-grid-container">
+<div class="menu-grid-container">
         <div class="menu-grid-item">
           <a class="menu-grid-item-text" href="#about">
             <span style="color: #c5787f">A</span><span style="color: #c0872c">B</span><span style="color: #6aa482">O</span><span style="color: #97b706">U</span><span style="color: #b04420">T</span>
@@ -146,35 +145,37 @@
     </div>
 
     <div class="rsvp-form-container">
-        <form action="/action_page.php">
+      <div class="rsvp-thank-you rsvp-label" style="display: none; font-family: 'Sutter Camp'; font-size: 30px;"><p>Thank you!</br>See you there!</p></div>
+        <form class="rsvp-form">
         <div class="rsvp-row">
           <div class="rsvp-col-25">
-            <label class="rsvp-label" for="fname">YOUR NAME</label>
+            <label class="rsvp-label" for="name">YOUR NAME</label>
           </div>
           <div class="rsvp-col-75">
-            <input class="rsvp-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+            <input class="rsvp-input" type="text" id="name" name="name" placeholder="Your name..">
           </div>
         </div>
         <div class="rsvp-row">
           <div class="rsvp-col-25">
-            <label class="rsvp-label" for="lname">EMAIL</label>
+            <label class="rsvp-label" for="email">EMAIL</label>
           </div>
           <div class="rsvp-col-75">
-            <input class="rsvp-input" type="text" id="lname" name="email" placeholder="Enter your email..">
+            <input class="rsvp-input" type="text" id="email" name="email" placeholder="Enter your email..">
           </div>
         </div>
         <div class="rsvp-row">
           <div class="rsvp-col-25">
-            <label class="rsvp-label" for="subject">MESSAGE</label>
+            <label class="rsvp-label" for="message">MESSAGE</label>
           </div>
           <div class="rsvp-col-75">
-            <textarea class="rsvp-input" id="subject" name="subject" placeholder="Feel free to write a message.." style="height:200px"></textarea>
+            <textarea class="rsvp-input" id="message" name="message" placeholder="Feel free to write a message.." style="height:200px"></textarea>
           </div>
         </div>
         <br>
         <div class="rsvp-submit-container">
           <div class="rsvp-row">
-            <input class="rsvp-submit" type="submit" value="Submit">
+            <!-- <input class="rsvp-submit" type="submit" value="Submit"> -->
+            <button class="rsvp-submit">Send</button>
           </div>
         </div>
         </form>
@@ -192,6 +193,40 @@
     
   </div>
 
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    const submitButton = document.querySelector(".rsvp-submit");
+    const nameEl = document.querySelector("#name");
+    const emailEl = document.querySelector("#email");
+    const messageEl = document.querySelector("#message");
+    const rsvpForm = document.querySelector(".rsvp-form");
+    const thankYou = document.querySelector(".rsvp-thank-you");
 
+    submitButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      rsvpForm.style.display = 'none';
+      thankYou.style.display = 'block';
+  
+      const postData = {
+        rsvp: {
+          name: nameEl.value,
+          email: emailEl.value,
+          message: messageEl.value,
+        }
+      };
+
+      fetch('https://api.elaineandjohn.com/rsvp', {
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        method: 'POST',
+        body: JSON.stringify(postData),
+      })
+      .then(response => response.json())
+      .then(data => console.log(data));
+    });
+  }
+}
+</script>
 </body>
 </html>
