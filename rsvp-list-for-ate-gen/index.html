@@ -24,7 +24,7 @@ document.onreadystatechange = async() => {
 
         const card = document.createElement('div');
         card.innerHTML = `<h2>${rsvp.name}</h2><a href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p>`;
-        return d;
+        return card;
       }));
   }
 };
