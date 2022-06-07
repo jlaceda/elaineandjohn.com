@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elaine and John's Baby Shower - RSVP list for Ate Gen</title>
+</head>
+<body>
+    <div id="a" style="max-width:640px"></div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    const a = document.getElementById('a');
+    fetch('https://api.elaineandjohn.com/rsvp-list')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const b = document.createElement("div");
+        const c = data.map((rsvp) => {
+            const p = document.createElement("p");
+            p.innerHTML = `${rsvp.name}</br>${rsvp.email}</br>${rsvp.message}`;
+            return p;
+        });
+        b.append(...c);
+        a.appendChild(b);
+    });
+  }
+}
+</script>
+</body>
+</html>
