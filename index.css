@@ -3,57 +3,45 @@
     display: revert;
 }
 
-/* Preferred box-sizing value */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Reapply the pointer cursor for anchor tags */
 a, button {
     cursor: revert;
 }
 
-/* Remove list styles (bullets/numbers) */
 ol, menu {
     list-style: none;
 }
 
-/* For images to not be able to exceed their container */
 img {
     max-width: 100%;
 }
 
-/* removes spacing between cells in tables */
 table {
     border-collapse: collapse;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
 textarea {
     white-space: revert;
 }
 
-/* minimum style to allow to style meter element */
 meter {
     -webkit-appearance: revert;
     appearance: revert;
 }
 
-/* reset default text opacity of input placeholder */
 ::placeholder {
     color: unset;
 }
 
-/* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
 :where([hidden]) {
     display: none;
 }
 
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly. */
 :where([contenteditable]) {
     -moz-user-modify: read-write;
     -webkit-user-modify: read-write;
@@ -63,14 +51,10 @@ meter {
 
 }
 
-/* apply back the draggable feature - exist only in Chromium and Safari */
 :where([draggable="true"]) {
     -webkit-user-drag: element;
 }
 
-/***
-  Start of custom styles.
-***/
 @font-face {
   font-family: "Sutter Camp";
   src: url("SutterCamp.otf") format("opentype");;
@@ -79,7 +63,6 @@ html {
   min-width: 20rem;
   overflow-y: scroll;
   height: 100vh;
-  /* font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; */
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -109,11 +92,8 @@ body {
     margin-top: 2vh;
     display: grid;
     grid-template-columns: auto auto auto;
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
     width: 100%;
     display: grid;
-    /* grid-template-columns: 1fr [left-edge] 4fr [right-edge] 1fr; */
     position: fixed;
     top: 0;
     padding: 0 20vw;
@@ -121,8 +101,6 @@ body {
 }
   
 .menu-grid-item {
-
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     text-align: center;
 }
 
@@ -143,6 +121,7 @@ body {
   text-align: center;
   background: url('totoro_face.png');
 }
+
 .title-container {
   background-color: blueviolet;
   display: grid;
@@ -156,9 +135,6 @@ body {
     text-align: center;
 }
 
-/********** ELAINE CSS **************/
-
-/******** HOME PAGE MAIN ************/
 .home {
     text-align: center;
     margin-top: 10vh;
@@ -201,7 +177,6 @@ body {
     width: 40%;
 }
 
-/*** FOR DESKTOP VIEW ***/
 @media only screen and (min-width: 1500px) {
     .home-join {
         font-size: 5vw;
@@ -229,64 +204,7 @@ body {
         margin-top: 5vh;
     }
 }
-  /* *** LEAVES ***
-  /* BIG LEAF VINE */
-  /* .leaf1 {
-    z-index: 1;
-    width: 20%;
-    position: absolute;
-    transform: rotate(90deg);
-    margin: -350px 0px 0px 0px;
-} */
 
-/* .leaf1-r1 {
-    z-index: 1;
-    width: 20%;
-    position: absolute;
-    transform: rotate(270deg);
-    margin: -500px 0px 0px 0px;
-    right: 0px;
-} */
-
-/* SMALL 2 LEAVES */
-/* .leaf2 {
-    z-index: 1;
-    width: 8%;
-    position: absolute;
-    transform: rotate(90deg);
-    margin: -350px 0px 0px 0px;
-} */
-
-/* LEAF VINE 3 LEAVES */
-/* .leaf3 {
-    z-index: 1;
-    width: 15%;
-    position: absolute;
-    transform: rotate(90deg);
-    margin: -500px 0px 0px 0px;
-} */
-/* LEAF VINE 4 LEAVES */
-/* .leaf4 {
-    z-index: 1;
-    width: 18%;
-    position: absolute;
-    transform: rotate(270deg);
-    margin: -300px 0px 0px 0px;
-    right: 0px;
-} */
-
-/* SMALL 3 LEAVES */
-/* .leaf5 {
-    z-index: 1;
-    width: 15%;
-    position: absolute;
-    transform: rotate(270deg);
-    margin: -300px -20px 0px 0px;
-    right: 0;
-}  */
-
-
-/***** TOTORO CONTAINER *******/
 .content-container {
     background-color: #cfdd8e;
     margin-top: -20px;
@@ -294,14 +212,12 @@ body {
 }
 
 .content-container-babychange {
-    /* color: white; */
     font-family: "Sutter Camp";
     line-height: 0.8;
     text-align: center;
 }
 
 
-/***** REGISTRY-OVERLAP *****/
 .panel5_wrapper {
     position: relative;
     width: 100%;
@@ -321,14 +237,11 @@ body {
 	height: 20vh;
     top: 0;
     left: 0;
-    /* USE MARIO BACKGROUND IMAGE INSTEAD */
     background-color: #cfdd8e; 
     background-size: cover;   
     clip-path: polygon(0% 90%,100% 0%,100% 100%,0% 100%);
 }
 
-
-/***** REGISTRY-CONTENT *****/
 .content-registry {
     background-color: #cfdd8e;
     padding-bottom: 10vh;
@@ -354,7 +267,6 @@ body {
 }
 
 .content-container-text {
-    /* color: white; */
     font-size: 22px;
     margin: 8vh 10vw 0 10vw;
 }
@@ -367,15 +279,6 @@ body {
     margin: 5vw;    
 }
 
-/* .reg-icon-containers {
-    background-color: white;
-    border-radius: 50%;
-    width: 15vw;
-    height: 15vw;
-    min-width: 200px;
-    min-height: 200px;
-    margin: 2vw;
-} */
 .registry-icon-amazon {
     margin-top: 20%;
 }
@@ -392,7 +295,7 @@ body {
     display: flex;
   }
   
-  .registry-grid-item {
+.registry-grid-item {
     background-color: white;
 
     border-radius: 50%;
@@ -405,7 +308,6 @@ body {
     margin: 0 auto;
   }
 
-  /****** RSVP *******/
 .panel6_wrapper {
     position: relative;
     width: 100%;
@@ -447,7 +349,6 @@ body {
     padding: 5vw;
 }
 
-/** RSVP FORM **/
 .rsvp-input {
     width: 100%;
     padding: 12px;
@@ -469,7 +370,6 @@ body {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    /* float: right; */
 }
 
 .rsvp-submit-container {
@@ -497,14 +397,12 @@ body {
     margin-top: 6px;
 }
   
-  /* Clear floats after the columns */
 .rsvp-row:after {
     content: "";
     display: table;
     clear: both;
 }
   
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .rsvp-col-25, .rsvp-col-75, .rsvp-submit {
       width: 100%;
@@ -515,7 +413,6 @@ body {
 .acorn-trail {
     display: block;
     width: 60%;
-    /* float: right; */
     z-index: 10;
     margin-top: -3vh;
     margin-left: 20vw;

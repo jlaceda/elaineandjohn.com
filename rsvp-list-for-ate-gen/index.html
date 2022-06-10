@@ -9,7 +9,7 @@
 <body style='max-width: 800px; min-width: 20rem; overflow-y: scroll; height: 100vh; font-family: sans-serif; line-height: 1.6; font-size: 1.00rem; background-color: #e1eac6; color: #444;'>
   <header>
     <h1>RVSP List for Ate Gen</h1>
-    <aside><a id='email-everyone' href='mailto:john.laceda@gmail.com, ealasagas@gmail.com?bcc='>email everyone (bcc)</a></aside>
+    <aside><a id='email-everyone' target="_blank" href='mailto:john.laceda@gmail.com, ealasagas@gmail.com?bcc='>email everyone (bcc)</a></aside>
   </header>
   <hr>
   <div id='container'></div>
@@ -24,7 +24,7 @@ document.onreadystatechange = async() => {
         emailEveryoneAnchor.setAttribute('href', `${mailtoText}${rsvp.email}, `);
 
         const card = document.createElement('div');
-        card.innerHTML = `<h3>${rsvp.name}</h3><a href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p><hr>`;
+        card.innerHTML = `<h3>${rsvp.name}</h3><a target='_blank' href='mailto:${rsvp.email}'>${rsvp.email}</a><p>${rsvp.message}</p><hr>`;
         return card;
       }));
   }
